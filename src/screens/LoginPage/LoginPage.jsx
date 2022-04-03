@@ -1,19 +1,27 @@
-import React, {useState} from 'react'
-import AuthBoilerplate from '../../components/AuthBoilerplate/AuthBoilerplate';
+import React, { useState } from 'react';
 
+import { useDispatch } from 'react-redux';
+import { loginUser } from '../../redux/slices/auth';
+
+import AuthBoilerplate from '../../components/AuthBoilerplate/AuthBoilerplate';
 import { LoginPageContainer } from './LoginPage.styled';
 
 const LoginPage = () => {
-    const [email, setEmail] = useState('');
+	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
+
+	const dispatch = useDispatch();
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		console.log(email);
-		console.log(password);
+		const formData = {
+			email,
+			password,
+		};
+		dispatch(loginUser(formData))
 	};
-  return (
-    <AuthBoilerplate>
+	return (
+		<AuthBoilerplate>
 			<LoginPageContainer>
 				<h2>Login</h2>
 				<form onSubmit={handleSubmit}>
@@ -31,7 +39,7 @@ const LoginPage = () => {
 				</form>
 			</LoginPageContainer>
 		</AuthBoilerplate>
-  )
-}
+	);
+};
 
-export default LoginPage
+export default LoginPage;

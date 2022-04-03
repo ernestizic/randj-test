@@ -38,7 +38,7 @@ export const Auth = styled.div`
 		background: inherit;
 		padding: 10px 35px;
 		&:hover {
-			background: #EA7052;
+			background: #ea7052;
 			transition: all 0.3s ease-in-out;
 		}
 	}
@@ -48,5 +48,19 @@ export const Auth = styled.div`
 			margin: 5px;
 			font-size: 16px;
 		}
+	}
+`;
+
+export const AuthenticatedUser = styled.div`
+	text-align: center;
+	color: #fff;
+	button {
+		background: #EA7052;
+		color: #fff;
+		border: none;
+		border-radius: 4px;
+		margin-top: 10px;
+		font-size: 20px;
+		padding: 4px 20px;
 	}
 `;

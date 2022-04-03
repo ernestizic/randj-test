@@ -17,6 +17,7 @@ export const AdContainer = styled.div`
 		padding-bottom: 3px;
 		@media (max-width: 576px) {
 			padding: 0px 15px;
+			font-size: 14px;
 		}
 	}
 
@@ -26,12 +27,16 @@ export const AdContainer = styled.div`
 		padding: 10px 40px;
 		@media (max-width: 576px) {
 			padding: 4px 10px;
+			font-size: 14px;
 		}
 	}
 	.close {
 		font-size: 28px;
 		&:hover{
 			cursor: pointer;
+		}
+		@media (max-width: 576px) {
+			font-size: 35px;
 		}
 	}
 `;

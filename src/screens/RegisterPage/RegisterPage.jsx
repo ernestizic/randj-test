@@ -1,4 +1,8 @@
 import React, { useState } from 'react';
+
+import { useDispatch } from 'react-redux';
+import { registerUser } from '../../redux/slices/auth';
+
 import AuthBoilerplate from '../../components/AuthBoilerplate/AuthBoilerplate';
 
 import { RegisterPageContainer } from './RegisterPage.styled';
@@ -7,10 +11,15 @@ const RegisterPage = () => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 
+  const dispatch = useDispatch();
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		console.log(email);
-		console.log(password);
+		const formData = {
+      email,
+      password
+    }
+    dispatch(registerUser(formData))
 	};
 
 	return (
