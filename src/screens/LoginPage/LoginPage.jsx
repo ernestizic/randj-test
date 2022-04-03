@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react'
 import AuthBoilerplate from '../../components/AuthBoilerplate/AuthBoilerplate';
 
-import { RegisterPageContainer } from './RegisterPage.styled';
+import { LoginPageContainer } from './LoginPage.styled';
 
-const RegisterPage = () => {
-	const [email, setEmail] = useState('');
+const LoginPage = () => {
+    const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 
 	const handleSubmit = (e) => {
@@ -12,11 +12,10 @@ const RegisterPage = () => {
 		console.log(email);
 		console.log(password);
 	};
-
-	return (
-		<AuthBoilerplate>
-			<RegisterPageContainer>
-				<h2>Register</h2>
+  return (
+    <AuthBoilerplate>
+			<LoginPageContainer>
+				<h2>Login</h2>
 				<form onSubmit={handleSubmit}>
 					<input
 						type='email'
@@ -30,9 +29,9 @@ const RegisterPage = () => {
 					/>
 					<button type='submit'>Register</button>
 				</form>
-			</RegisterPageContainer>
+			</LoginPageContainer>
 		</AuthBoilerplate>
-	);
-};
+  )
+}
 
-export default RegisterPage;
+export default LoginPage

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const RegisterPageContainer = styled.div`
+export const LoginPageContainer = styled.div`
 	background: #fff;
 	margin: 100px 250px;
 	text-align: center;

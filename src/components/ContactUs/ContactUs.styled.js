@@ -1,20 +1,17 @@
 import styled from 'styled-components';
 
 export const ContactUsContainer = styled.div`
-	padding: 70px 60px 220px 60px;
+	padding: 70px 60px 400px 60px;
 	background: #f4f4f4;
 	color: #000;
 	display: flex;
 	@media (max-width: 576px) {
 		flex-direction: column-reverse;
-		padding: 50px 20px;
+		padding: 50px 20px 250px 20px;
 	}
 
 	.contact {
 		width: 50%;
-		@media (max-width: 576px) {
-			width: 100%;
-		}
 		h1 {
 			font-size: 55px;
 			line-height: 81px;
@@ -52,17 +49,26 @@ export const ContactUsContainer = styled.div`
 				padding-left: 20px;
 			}
 		}
+		@media (max-width: 576px) {
+			width: 100%;
+			h1 {
+				font-size: 30px;
+			}
+			p {
+				font-size: 16px;
+			}
+		}
 	}
 
 	.contact-image-container {
 		width: 50%;
-        @media (max-width: 912px) {
-            width: 50%;
-            img {
-                width: 100%;
-                height: auto;
-            }
-        }
+		@media (max-width: 912px) {
+			width: 50%;
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
 		@media (max-width: 576px) {
 			width: 100%;
 			img {

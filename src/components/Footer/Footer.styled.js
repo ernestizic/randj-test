@@ -7,8 +7,11 @@ export const FooterContainer = styled.div`
 	width: 100%;
 	background: #301446;
 	color: #fff;
-	p{
+	p {
 		text-align: center;
+		@media (max-width: 576px) {
+			font-size: 14px;
+		}
 	}
 	img {
 		width: 180px;
@@ -25,8 +28,11 @@ export const LinksContainer = styled.div`
 	display: flex;
 	justify-content: space-evenly;
 	margin: 40px 0 60px 0;
-	a{
+	a {
 		color: #fff;
 		font-size: 20px;
+		@media (max-width: 576px) {
+			font-size: 16px;
+		}
 	}
-`
+`;

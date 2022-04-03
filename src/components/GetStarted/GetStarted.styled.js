@@ -46,8 +46,11 @@ export const GetStartedContainer = styled.div`
 		@media (max-width: 576px) {
 			width: 100%;
 			h1 {
-				font-size: 40px;
+				font-size: 30px;
 				line-height: 51px;
+			}
+			p {
+				font-size: 16px;
 			}
 			button {
 				width: 100%;

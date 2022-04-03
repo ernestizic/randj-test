@@ -35,9 +35,16 @@ export const MissionContainer = styled.div`
 	@media (max-width: 576px) {
 		width: 100%;
 		header {
-			font-size: 40px;
+			font-size: 30px;
 			line-height: 51px;
 		}
+		p {
+		font-size: 16px;
+		line-height: 30px;
+		letter-spacing: 1px;
+		padding: 20px 0;
+	}
+
 	}
     @media (max-width: 768px) {
         width: 100%;
