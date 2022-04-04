@@ -32,7 +32,14 @@ export const TrendingPostsContainer = styled.div`
 			color: #fff;
 			padding: 20px 150px;
 			font-size: 20px;
-			border: none;
+			border: 1px solid #ea7052;
+			&:hover {
+				cursor: pointer;
+				border: 1px solid #ea7052;
+				color: #ea7052;
+				background: inherit;
+				transition: all 0.3s ease-in-out;
+			}
 			@media (max-width: 576px) {
 				padding: 10px 90px;
 			}

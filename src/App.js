@@ -8,6 +8,8 @@ import RegisterPage from './screens/RegisterPage/RegisterPage';
 
 import { useSelector } from 'react-redux';
 
+import {motion} from 'framer-motion'
+
 // toastify imports
 import { ToastContainer, Flip } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -41,13 +43,13 @@ function App() {
 					transition={Flip}
 				/>
 				{showAd && <TopAd setShowAd={setShowAd} />}
-				<div className='content-wrap'>
+				<motion.div className='content-wrap' layout>
 					<Routes>
 						<Route exact path='/' element={<IndexPage />} />
 						<Route exact path='/register' element={ token ? <Navigate to='/' /> : <RegisterPage />} />
 						<Route exact path='/login' element={ token ? <Navigate to='/' /> : <LoginPage />} />
 					</Routes>
-				</div>
+				</motion.div>
 			</div>
 		</BrowserRouter>
 	);

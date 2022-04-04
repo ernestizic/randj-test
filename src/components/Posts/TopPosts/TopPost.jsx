@@ -5,8 +5,6 @@ import ArrowIcon from '../../../assets/vector.png';
 import { TopPostContainer, TopPostList } from './TopPost.styled';
 
 const TopPost = ({isLoading, posts}) => {
-	console.log(posts)
-
 	return (
 		<TopPostContainer>
 			<header>

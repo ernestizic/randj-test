@@ -35,7 +35,7 @@ const LoginPage = () => {
 						placeholder='Password'
 						onChange={(e) => setPassword(e.target.value)}
 					/>
-					<button type='submit'>Register</button>
+					<button type='submit'>Login</button>
 				</form>
 			</LoginPageContainer>
 		</AuthBoilerplate>

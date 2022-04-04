@@ -29,7 +29,7 @@ export const TopPostList = styled.div`
 		border-radius: 10px;
 		margin: 20px 10px;
 		position: relative;
-		height: 400px;
+		height: 350px;
 		min-width: 500px;
 		@media (max-width: 576px) {
 			min-width: 250px;

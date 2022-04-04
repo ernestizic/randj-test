@@ -54,6 +54,30 @@ export const loginUser = (formData) => async (dispatch, getState) => {
 	}
 };
 
+// Load User
+export const getUserDetail = () => async (dispatch, getState) => {
+	const token = getState().auth.token;
+
+	const config = {
+		headers: {
+			'Content-Type': 'application/json',
+		},
+	};
+	if (token) {
+		config.headers['authorization'] = `Bearer ${token}`;
+	}
+	dispatch(loadUserLoading());
+	try {
+		const res = await axios.get(
+			'https://www.giropay.xyz/api/v1/giro-app/auth/me',
+			config
+		);
+		dispatch(loadUserSuccess(res.data));
+	} catch (err) {
+		dispatch(loadUserFailure(err.response.data.Error));
+	}
+};
+
 /************************** Slice ***********************/
 
 const authSlice = createSlice({
@@ -116,6 +140,30 @@ const authSlice = createSlice({
 			};
 		},
 
+		// user reducer
+		loadUserLoading: (state) => {
+			return {
+				...state,
+				isLoading: true,
+			};
+		},
+		loadUserSuccess: (state, action) => {
+			return {
+				...state,
+				isLoading: false,
+				user: action.payload.user
+			};
+		},
+		loadUserFailure: (state) => {
+			localStorage.removeItem('token');
+			return {
+				...state,
+				isLoading: false,
+				token: null,
+				user: null,
+			};
+		},
+
 		// Logout
 		logout: (state) => {
 			localStorage.removeItem('token');
@@ -136,6 +184,9 @@ export const {
 	loginLoading,
 	loginSuccess,
 	loginFailure,
+	loadUserLoading,
+	loadUserSuccess,
+	loadUserFailure,
 	logout,
 } = authSlice.actions;
 

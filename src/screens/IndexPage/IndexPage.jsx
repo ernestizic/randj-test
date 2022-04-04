@@ -10,20 +10,22 @@ import TopPost from '../../components/Posts/TopPosts/TopPost';
 import { useDispatch, useSelector } from 'react-redux';
 import TrendingPosts from '../../components/Posts/TrendingPosts/TrendingPosts';
 import { fetchPosts } from '../../redux/slices/posts';
+import { getUserDetail } from '../../redux/slices/auth';
 
 const IndexPage = () => {
-	const { token } = useSelector((state) => state.auth);
+	const { token, user } = useSelector((state) => state.auth);
 	const { isLoading, posts } = useSelector((state) => state.posts);
 
 	const dispatch = useDispatch()
 
 	useEffect(() => {
 		dispatch(fetchPosts())
+		dispatch(getUserDetail())
 	}, [dispatch])
 	
 	return (
 		<div className='index'>
-			<Header />
+			<Header user={user} />
 
 			{token ? (
 				<>
