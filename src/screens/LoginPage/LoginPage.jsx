@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { loginUser } from '../../redux/slices/auth';
 
 import AuthBoilerplate from '../../components/AuthBoilerplate/AuthBoilerplate';
 import { LoginPageContainer } from './LoginPage.styled';
+import Loader from '../../components/Loader';
 
 const LoginPage = () => {
+	const { isLoading } = useSelector((state) => state.auth);
+
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 
@@ -22,6 +25,7 @@ const LoginPage = () => {
 	};
 	return (
 		<AuthBoilerplate>
+			{isLoading && <Loader />}
 			<LoginPageContainer>
 				<h2>Login</h2>
 				<form onSubmit={handleSubmit}>

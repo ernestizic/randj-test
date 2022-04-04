@@ -1,29 +1,33 @@
 import React, { useState } from 'react';
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { registerUser } from '../../redux/slices/auth';
 
 import AuthBoilerplate from '../../components/AuthBoilerplate/AuthBoilerplate';
+import Loader from '../../components/Loader';
 
 import { RegisterPageContainer } from './RegisterPage.styled';
 
 const RegisterPage = () => {
+	const { isLoading } = useSelector((state) => state.auth);
+
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 
-  const dispatch = useDispatch();
+	const dispatch = useDispatch();
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		const formData = {
-      email,
-      password
-    }
-    dispatch(registerUser(formData))
+			email,
+			password,
+		};
+		dispatch(registerUser(formData));
 	};
 
 	return (
 		<AuthBoilerplate>
+			{isLoading && <Loader />}
 			<RegisterPageContainer>
 				<h2>Register</h2>
 				<form onSubmit={handleSubmit}>

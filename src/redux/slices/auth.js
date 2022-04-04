@@ -14,6 +14,7 @@ export const registerUser = (formData) => async (dispatch, getState) => {
 		);
 		dispatch(registerSuccess(res.data.data.data));
 		toast.success(res.data.data.data, { theme: 'colored' });
+		dispatch(loginUser(formData))
 	} catch (err) {
 		let apiErr =
 			err.response && err.response.data.Error

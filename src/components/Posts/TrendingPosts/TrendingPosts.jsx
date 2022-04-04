@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import ArrowIcon from '../../../assets/vector.png';
+import Loader from '../../Loader';
 
 import {
 	TrendingPostsContainer,
@@ -28,7 +29,7 @@ const TrendingPosts = ({ isLoading, posts }) => {
 				<h2>Trending</h2>
 			</header>
 
-			{isLoading && <div className='loading'>Please wait...</div>}
+			{isLoading && <Loader />}
 
 			<TrendingPostsGrid>
 				{posts &&

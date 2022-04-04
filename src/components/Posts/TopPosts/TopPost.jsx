@@ -2,6 +2,8 @@ import React from 'react';
 
 import ArrowIcon from '../../../assets/vector.png';
 
+import Loader from '../../Loader'
+
 import { TopPostContainer, TopPostList } from './TopPost.styled';
 
 const TopPost = ({isLoading, posts}) => {
@@ -12,7 +14,7 @@ const TopPost = ({isLoading, posts}) => {
 				<h2>Top Post</h2>
 			</header>
 
-			{isLoading && <div className='loading'>Please wait...</div>}
+			{isLoading && <Loader /> }
 			<TopPostList>
 				{posts &&
 					posts.slice(0, 6).map((post) => (
