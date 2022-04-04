@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
 export const ContactUsContainer = styled.div`
-	padding: 70px 0 400px 60px;
+	padding: 70px 0 200px 60px;
 	background: #f4f4f4;
 	color: #000;
 	display: flex;
 	@media (max-width: 576px) {
 		flex-direction: column-reverse;
-		padding: 50px 0 250px 20px;
+		padding: 50px 0 50px 20px;
 	}
 
 	.contact {

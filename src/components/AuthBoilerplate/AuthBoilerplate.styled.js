@@ -6,6 +6,10 @@ export const AuthContainer = styled.div`
 	width: 100%;
 	background: #e5e5e5;
 	height: 100vh;
+	@media (max-width: 912px) {
+		position: static;
+		background: inherit;
+	}
 
 	.sidebar {
 		position: relative;

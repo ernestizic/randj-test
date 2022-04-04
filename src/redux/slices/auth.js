@@ -65,7 +65,6 @@ const authSlice = createSlice({
 		user: null,
 		msg: null,
 		token: localStorage.getItem('token'),
-		isAuthenticated: false,
 	},
 
 	// Reducers
@@ -105,7 +104,6 @@ const authSlice = createSlice({
 				...state,
 				isLoading: false,
 				token: action.payload.token,
-				isAuthenticated: true,
 			};
 		},
 		loginFailure: (state, action) => {
@@ -114,7 +112,6 @@ const authSlice = createSlice({
 				...state,
 				isLoading: false,
 				token: null,
-				isAuthenticated: false,
 				msg: action.payload,
 			};
 		},
@@ -126,7 +123,6 @@ const authSlice = createSlice({
 				...state,
 				isLoading: false,
 				token: null,
-				isAuthenticated: false,
 			};
 		},
 	},
