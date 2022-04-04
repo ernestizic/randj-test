@@ -22,7 +22,7 @@ const IndexPage = () => {
 	}, [dispatch])
 	
 	return (
-		<div>
+		<div className='index'>
 			<Header />
 
 			{token ? (

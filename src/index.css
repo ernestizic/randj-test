@@ -39,3 +39,6 @@ button:hover{
 input:focus{
 	outline: 1px solid #ea7052;
 }
+.index{
+	overflow: hidden;
+}
