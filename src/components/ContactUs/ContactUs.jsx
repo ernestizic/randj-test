@@ -9,7 +9,7 @@ import { ContactUsContainer } from './ContactUs.styled'
 const ContactUs = () => {
   return (
     <ContactUsContainer>
-        <div className='contact'>
+        <div className='contact' data-aos="fade-up-right">
             <h1>Contact Us</h1>
             <p>Got any questions, feedback, request and complaints? Reach out...</p>
             <div className='whatsapp'>
@@ -25,7 +25,7 @@ const ContactUs = () => {
         </div>
 
         <div className='contact-image-container'>
-            <img src={ContactImg} alt='contact' />
+            <img src={ContactImg} alt='contact' data-aos="fade-left" />
         </div>
     </ContactUsContainer>
   )

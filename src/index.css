@@ -31,3 +31,11 @@ a{
 button:hover{
 	cursor: pointer;
 }
+
+.loading{
+	text-align: center;
+}
+
+input:focus{
+	outline: 1px solid #ea7052;
+}

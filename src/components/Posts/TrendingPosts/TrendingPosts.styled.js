@@ -20,15 +20,22 @@ export const TrendingPostsContainer = styled.div`
 		align-items: center;
 	}
 
-	.button-container{
+	.button-container {
 		margin-top: 50px;
 		text-align: center;
-		button{
-			background: #EA7052;
+		@media (max-width: 576px) {
+			margin: 30px 0 50px 0 ;
+		}
+		button {
+			border-radius: 10px;
+			background: #ea7052;
 			color: #fff;
-			padding: 15px 150px;
+			padding: 20px 150px;
 			font-size: 20px;
 			border: none;
+			@media (max-width: 576px) {
+				padding: 10px 90px;
+			}
 		}
 	}
 `;
@@ -51,14 +58,14 @@ export const TrendingPostsGrid = styled.div`
 		position: relative;
 		height: 400px;
 		min-width: 500px;
-        @media (max-width: 576px) {
-            min-width: 200px;
+		@media (max-width: 576px) {
+			min-width: 200px;
 			height: 200px;
-        }
-        @media (max-width: 912px) {
-            min-width: 200px;
+		}
+		@media (max-width: 912px) {
+			min-width: 200px;
 			height: 250px;
-        }
+		}
 
 		img {
 			width: 100%;

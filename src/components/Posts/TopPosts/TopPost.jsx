@@ -13,6 +13,8 @@ const TopPost = ({isLoading, posts}) => {
 				<img src={ArrowIcon} alt='arrow' className='arrowIcon' />
 				<h2>Top Post</h2>
 			</header>
+
+			{isLoading && <div className='loading'>Please wait...</div>}
 			<TopPostList>
 				{posts &&
 					posts.slice(0, 6).map((post) => (

@@ -6,12 +6,12 @@ import { GetStartedContainer } from './GetStarted.styled'
 
 const GetStarted = () => {
   return (
-    <GetStartedContainer>
+    <GetStartedContainer >
         <div className='get-started'>
-            <h1>Everything you'll need to <span style={{color: '#ea7052'}}>excel</span> in life</h1>
+            <h1  data-aos="fade-up">Everything you'll need to <span style={{color: '#ea7052'}}>excel</span> in life</h1>
             <p>we've curated a list of valuable resources to get you going in life, all for free!</p>
-            <Link to='/register'>
-              <button>Get Started</button>
+            <Link to='/register' >
+              <button data-aos="zoom-out">Get Started</button>
             </Link>
         </div>
         <div className='image-container'>

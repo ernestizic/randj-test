@@ -9,7 +9,7 @@ export const LoginPageContainer = styled.div`
 	@media (max-width: 912px) {
 		max-width: 80%;
 		margin: 30% auto;
-        padding: 20px;
+		padding: 20px;
 	}
 
 	h2 {
@@ -32,12 +32,18 @@ export const LoginPageContainer = styled.div`
 		width: 80%;
 		padding: 15px;
 		margin-bottom: 30px;
-		border: none;
+		border: 1px solid #ea7052;
 		color: #fff;
 		border-radius: 7px;
 		background: #ea7052;
 		font-size: 18px;
-        @media (max-width: 912px) {
+		&:hover {
+			border: 1px solid #ea7052;
+			color: #ea7052;
+			background: inherit;
+			transition: all 0.3s ease-in-out;
+		}
+		@media (max-width: 912px) {
 			width: 100%;
 		}
 	}

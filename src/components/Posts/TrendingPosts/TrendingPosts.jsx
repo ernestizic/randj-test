@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 import ArrowIcon from '../../../assets/vector.png';
 
@@ -8,18 +8,18 @@ import {
 } from './TrendingPosts.styled';
 
 const TrendingPosts = ({ isLoading, posts }) => {
-	const [itemsToShow, setItemsToShow] = useState(8)
-	const [isExpanded, setIsExpanded] = useState(false)
+	const [itemsToShow, setItemsToShow] = useState(8);
+	const [isExpanded, setIsExpanded] = useState(false);
 
-	const showMore =()=> {
+	const showMore = () => {
 		if (itemsToShow === 8) {
-			setItemsToShow(posts.length)
-			setIsExpanded(true)
+			setItemsToShow(posts.length);
+			setIsExpanded(true);
 		} else {
-			setItemsToShow(8)
-			setIsExpanded(false)
+			setItemsToShow(8);
+			setIsExpanded(false);
 		}
-	}
+	};
 
 	return (
 		<TrendingPostsContainer>
@@ -27,6 +27,8 @@ const TrendingPosts = ({ isLoading, posts }) => {
 				<img src={ArrowIcon} alt='arrow' className='arrowIcon' />
 				<h2>Trending</h2>
 			</header>
+
+			{isLoading && <div className='loading'>Please wait...</div>}
 
 			<TrendingPostsGrid>
 				{posts &&
@@ -39,11 +41,13 @@ const TrendingPosts = ({ isLoading, posts }) => {
 						</div>
 					))}
 			</TrendingPostsGrid>
-			<div className='button-container'>
-				<button onClick={showMore}>
-					{isExpanded ? 'Show Less' : 'Show More'}
-				</button>
-			</div>
+			{posts.length > 1 && (
+				<div className='button-container'>
+					<button onClick={showMore}>
+						{isExpanded ? 'Show Less' : 'Show More'}
+					</button>
+				</div>
+			)}
 		</TrendingPostsContainer>
 	);
 };

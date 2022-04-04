@@ -55,12 +55,18 @@ export const AuthenticatedUser = styled.div`
 	text-align: center;
 	color: #fff;
 	button {
-		background: #EA7052;
+		background: #ea7052;
 		color: #fff;
-		border: none;
+		border: 1px solid #ea7052;
 		border-radius: 4px;
 		margin-top: 10px;
 		font-size: 20px;
 		padding: 4px 20px;
+		&:hover {
+			border: 1px solid #ea7052;
+			color: #ea7052;
+			background: inherit;
+			transition: all 0.3s ease-in-out;
+		}
 	}
 `;

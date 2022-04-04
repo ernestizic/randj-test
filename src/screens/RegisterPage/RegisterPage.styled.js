@@ -32,11 +32,17 @@ export const RegisterPageContainer = styled.div`
 		width: 80%;
 		padding: 15px;
 		margin-bottom: 30px;
-		border: none;
+		border: 1px solid #ea7052;
 		color: #fff;
 		border-radius: 7px;
 		background: #ea7052;
 		font-size: 18px;
+		&:hover {
+			border: 1px solid #ea7052;
+			color: #ea7052;
+			background: inherit;
+			transition: all 0.3s ease-in-out;
+		}
         @media (max-width: 912px) {
 			width: 100%;
 		}
