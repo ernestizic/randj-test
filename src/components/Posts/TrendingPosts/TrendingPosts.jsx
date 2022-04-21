@@ -35,7 +35,7 @@ const TrendingPosts = ({ isLoading, posts }) => {
 				{posts &&
 					posts.slice(0, itemsToShow).map((post) => (
 						<div key={post.id} className='post-container'>
-							<img src={post.metaImageUrl} alt='post desc' />
+							<img src={post.metaImageUrl} alt='post desc' loading='lazy' />
 							<div className='content'>
 								<p>{post.description}</p>
 							</div>
