@@ -62,8 +62,8 @@ export const GetStartedContainer = styled.div`
 		padding: 0 100px;
 		width: 50%;
 		img {
-			width: 100%;
-			height: auto;
+			/* width: 100%; */
+			/* height: auto; */
 		}
 		@media (max-width: 768px) {
 			padding: 0;

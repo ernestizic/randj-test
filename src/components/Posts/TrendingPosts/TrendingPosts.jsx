@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+
 import ArrowIcon from '../../../assets/vector.png';
 import Loader from '../../Loader';
 
@@ -35,7 +38,14 @@ const TrendingPosts = ({ isLoading, posts }) => {
 				{posts &&
 					posts.slice(0, itemsToShow).map((post) => (
 						<div key={post.id} className='post-container'>
-							<img src={post.metaImageUrl} alt='post desc' loading='lazy' />
+							<LazyLoadImage
+								alt='post description'
+								height='100%'
+								width='100%'
+								src={post.metaImageUrl}
+								placeholderSrc={post.metaImageUrl}
+								effect='blur'
+							/>
 							<div className='content'>
 								<p>{post.description}</p>
 							</div>

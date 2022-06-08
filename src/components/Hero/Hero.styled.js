@@ -54,8 +54,8 @@ export const HeroImageContainer = styled.div`
 	text-align: center;
 	width: 50%;
 	img {
-		width: 100%;
-        height: auto
+		/* width: 100%; */
+        /* height: auto */
 	}
 	@media (max-width: 576px) {
 		width: 100%;
